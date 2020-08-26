@@ -1,34 +1,42 @@
-# _Application Name_
+# _Pig Dice_
 
-#### _Brief description of application, Date of current version_
+#### _Object Game Exercise by Epicodus, August 26th, 2020_
 
-#### By _**List of contributors**_
+#### By _**Mike Manchee and David Butler**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+Write a program where two users can play Pig dice against each other.
+
+### Specs
+| Spec | Input | Output |
+| :-------------     | :------------- | :------------- |
+|  1. Roll Function, randomizer for the dice rolling | click | Random # 1-6 | 
+|  2. Add function, scores from previous and current dice rolls | X | X + score |
+|  3. Hold function, add current score to total | score | score + total |
+|  4. End turn function, switch players | player 1 end | player 2 start |
+|  5. Win function, if player total is >= 100, player wins | player >= 100 | win |
+|  6. Reload function, set page back to zero | click | reload |
+|  7. HTML board,  | 4 | 4 |
+|  8. CSS styling | 4 | 4 |
+|  9. Computer player ... | 4 | 4 |
+|  10. Add more dice ... | 4 | 4 |
+
+
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* Download files from GitHub repository
+* Place all files in a single directory 
+* Open index.html in browser of cohice
+* Have for with Pig Dice
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
-
 ## Support and contact details
-
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
 * HTML
 * CSS
   * Bootstrap
@@ -40,5 +48,5 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 
 ### License
 
-Copyright (c) 2020 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_Mike Manchee and David Butler_**
 Licenced under MIT
