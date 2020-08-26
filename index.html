@@ -14,13 +14,59 @@
     <form id="start-game">
       <div class="form-group">
         <label for="player1">Player 1:</label>
-        <input id="player1" class="form-control" type="text">
+        <input id="player1" class="form-control" type="text" placeholder="Enter name.." required>
       </div>
       <div class="form-group">
         <label for="player2">Player 2:</label>
-        <input id="player2" class="form-control" type="text">
+        <input id="player2" class="form-control" type="text" placeholder="Enter name.." required>
       </div>  
     </form>
+    <div id="game-board">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                <p id="player1-name"></p>
+              </div>
+              <div class="col-6">
+                <div class="player1-turn">
+                </div>
+                <div class="col-6">
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                <p id="player2-name"></p>
+              </div>
+              <div class="col-6">
+                <div class="player2-turn">
+                </div>
+                <div class="col-6">
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="align-item">
+        <button type="button" class="btn btn-info" id="roll-button">Roll</button>
+        <button type="button" class="btn btn-info" id="hold-button">Hold</button>
+      </div>
+        <div class="align-item">
+          <div class="card" id="score-box">
+            <div class="card-body">
+              <p id="score"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

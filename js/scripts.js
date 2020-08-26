@@ -38,5 +38,16 @@ Player.prototype.addScore = function(score) {
 // User Interface Logic
 
 $(document).ready(function() {
-  $("#")
+  $("#start-game").submit(function(event) {
+    let player1 = $("input#player1").val();
+    let player2 = $("input#player2").val();
+
+    $("#start-game").hide();
+    $("#game-board").show();
+  });
+  $("#game-board").on(function() {
+
+
+
+  });
 });
