@@ -39,15 +39,18 @@ Player.prototype.addScore = function(score) {
 
 $(document).ready(function() {
   $("#start-game").submit(function(event) {
+    event.preventDefault();
     let player1 = $("input#player1").val();
     let player2 = $("input#player2").val();
 
+    $("#player1-name").text(player1);
+    $("#player2-name").text(player2);
     $("#start-game").hide();
     $("#game-board").show();
   });
-  $("#game-board").on(function() {
-
-
+  $("#roll-button").click(function() {
+    rollDice();
+    $("#score").text(score);
 
   });
 });
