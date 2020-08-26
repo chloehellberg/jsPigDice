@@ -17,8 +17,8 @@ Write a program where two users can play Pig dice against each other.
 |  4. End turn function, switch players | player 1 end | player 2 start |
 |  5. Win function, if player total is >= 100, player wins | player >= 100 | win |
 |  6. Reload function, set page back to zero | click | reload |
-|  7. HTML board,  | 4 | 4 |
-|  8. CSS styling | 4 | 4 |
+|  7. HTML board,  | HTML | HTML |
+|  8. CSS styling | CSS | CSS |
 |  9. Computer player ... | 4 | 4 |
 |  10. Add more dice ... | 4 | 4 |
 
