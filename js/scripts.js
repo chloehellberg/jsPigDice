@@ -3,7 +3,7 @@ function Game() {
   this.players = []
   this.score = 0;
 }
-// Game {players: [{name: player1Name, total: 0, playerTurn: true}, {name: player2Name, total: 0, playerTurn: false}]} 
+// Game {players: [{name: player1Name, total: 0, playerTurn: true}, {name: player2Name, total: 0, playerTurn: false}], score: 0} 
 Game.prototype.addPlayer = function(player) {
   this.players.push(player);
 }
@@ -22,6 +22,13 @@ Game.prototype.addScore = function() {
   this.players[i].total += game.score;
   console.log(i + " = " + this.players[i].total);
 }
+
+Game.prototype.endTurn = function() {
+  game.players.forEach(function(e) {
+    e.playerTurn === true ? e.playerTurn = false : e.playerTurn = true;
+  });
+  game.score = 0;
+}
 // Business Logic Player
 function Player(name, total, playerTurn) {
   this.name = name,
@@ -30,47 +37,28 @@ function Player(name, total, playerTurn) {
 }
 
 // Roll Function
-
 const rollDice = () => {
   roll = Math.ceil(Math.random() * 6);
-  $("#roll").text(roll);
   if(roll !== 1) {                    // Add Function
     game.score = game.score + roll
-    console.log(game.score);
   } else {
     game.score = 0;
-    endTurn();
+    game.endTurn();
   }
-  console.log(score);
+  return roll;
 } 
-
-//endTurn function 
-const endTurn = () => {
-  let i = game.findPlayer();
-  if(i === 0) {
-    game.players[0].playerTurn = false;
-    game.players[1].playerTurn = true;
-  } else {
-    game.players[1].playerTurn = false;
-    game.players[0].playerTurn = true;
-  }
-}
 
 // Win Function
 const winner = () => {
-  let player;
+  let player = false;
   if (game.players[0].total >= 50 || game.players[1].total >= 50) {
     if (game.players[0].total >= 50) {
       player = game.players[0].name;
-    } else if (game.players[1].total >= 50) {
+    } else {
       player = game.players[1].name;
     }
-    $("#hold-button").prop("disabled", true);
-    $("#roll-button").prop("disabled", true);
-    $("#winner-name").text(player);
-    $("#game-board").hold();
-    $("#play-again-button").show();
-  } 
+  }
+  return player;
 }
 
 // Reload Function
@@ -99,7 +87,8 @@ $(document).ready(function() {
   });
   // Roll Button
   $("#roll-button").click(function() {
-    rollDice();
+    let roll = rollDice();
+    $("#roll").text(roll);
     $("#score").text(game.score);  
   });
   // Hold Button
@@ -111,11 +100,19 @@ $(document).ready(function() {
     } else {
       $("#player2-total").text(game.players[1].total);
     }
-    winner();
-    endTurn();
-    game.score = 0;
+
+    let win = winner();
+    if(win) {
+      $("#winner-name").text(win);
+      $("#game-board").hide();
+      $("#play-again-button").show();
+    }
+
+    $("#player1-turn").fadeToggle();
+    $("#player2-turn").fadeToggle();
+
+    game.endTurn();
+    $("#roll").text("0");
+    $("#score").text("0");
   });
 });
-
-// let playerNums = 
-// $("#player" + playerNums[0] + "-total").text(playerNums[1]);

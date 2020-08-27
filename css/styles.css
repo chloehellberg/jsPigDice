@@ -37,3 +37,16 @@
 #play-again-button {
   display: none;
 }
+
+#player2-turn {
+  display: none;
+}
+
+img {
+  width: 50%;
+  background-color: none;
+}
+
+.card-title {
+  text-align: center;
+}
