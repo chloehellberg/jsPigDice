@@ -18,9 +18,9 @@ Game.prototype.findPlayer = function() {
 
 Game.prototype.addScore = function() {
   let i = game.findPlayer();
-  console.log(game.score);
+  //console.log(game.score);
   this.players[i].total += game.score;
-  console.log(i + " = " + this.players[i].total);
+  //console.log(i + " = " + this.players[i].total);
 }
 
 Game.prototype.endTurn = function() {
@@ -28,7 +28,9 @@ Game.prototype.endTurn = function() {
     e.playerTurn === true ? e.playerTurn = false : e.playerTurn = true;
   });
   game.score = 0;
+  fadeCheck();
 }
+
 // Business Logic Player
 function Player(name, total, playerTurn) {
   this.name = name,
@@ -40,7 +42,7 @@ function Player(name, total, playerTurn) {
 const rollDice = () => {
   roll = Math.ceil(Math.random() * 6);
   if(roll !== 1) {                    // Add Function
-    game.score = game.score + roll
+    game.score = game.score + roll;
   } else {
     game.score = 0;
     game.endTurn();
@@ -63,13 +65,19 @@ const winner = () => {
 
 // Reload Function
   const reload = () => {
-    location.reload();
+    window.location.reload();
   }
 
 // User Interface Logic
 let game = new Game();
 
+function fadeCheck() {
+  $("#player1-turn").fadeToggle();
+  $("#player2-turn").fadeToggle();
+}
+
 $(document).ready(function() {
+  
   $("#start-game").submit(function(event) {
     event.preventDefault();
     let player1Name = $("input#player1").val();
@@ -107,9 +115,6 @@ $(document).ready(function() {
       $("#game-board").hide();
       $("#play-again-button").show();
     }
-
-    $("#player1-turn").fadeToggle();
-    $("#player2-turn").fadeToggle();
 
     game.endTurn();
     $("#roll").text("0");

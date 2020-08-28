@@ -26,10 +26,6 @@
   height: 300px;
 }
 
-.jumbotron {
-  display: none;
-}
-
 #game-board {
   display: none;
 }
