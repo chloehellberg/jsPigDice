@@ -1,5 +1,5 @@
 // Business Logic Game
-class Game {
+export class Game {
   constructor() {
     this.players = [],
     this.score = 0;
