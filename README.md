@@ -2,7 +2,7 @@
 
 #### _Object Game Exercise by Epicodus, August 26th, 2020_
 
-#### By _**Mike Manchee and David Butler**_
+#### By _**Mike Manchee, David Butler and Chloe Hellberg**_
 
 ## Description
 
@@ -28,7 +28,7 @@ Write a program where two users can play Pig dice against each other.
 
 * Download files from GitHub repository
 * Place all files in a single directory 
-* Open index.html in browser of cohice
+* Open index.html in browser of choice
 * Have for with Pig Dice
 
 ## Known Bugs
@@ -48,5 +48,5 @@ Write a program where two users can play Pig dice against each other.
 
 ### License
 
-Copyright (c) 2020 **_Mike Manchee and David Butler_**
+Copyright (c) 2020 **_Mike Manchee, David Butler and Chloe Hellberg_**
 Licenced under MIT
