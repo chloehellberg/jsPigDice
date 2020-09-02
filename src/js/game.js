@@ -18,17 +18,16 @@ export class Game {
   }
 
   addScore () {
-    let i = game.findPlayer();
-    this.players[i].total += game.score;
+    let i = this.findPlayer();
+    this.players[i].total += this.score;
   }
 
   endTurn () {
-    game.players.forEach(function(e) {
-      e.playerTurn === true ? e.playerTurn = false : e.playerTurn = true;
+    this.players.forEach(function(element) {
+      element.playerTurn === true ? element.playerTurn = false : element.playerTurn = true;
     });
-    game.score = 0;
-    $("#player1-turn").fadeToggle();
-    $("#player2-turn").fadeToggle();
+    this.score = 0;
+    //fadeFun();
   }
 
   rollDice () {
@@ -54,6 +53,11 @@ export class Game {
     return player;
   }
 
+}
+
+function fadeFun() {
+  $("#player1-turn").fadeToggle();
+  $("#player2-turn").fadeToggle();
 }
 
 // interface logic variable
